@@ -10,6 +10,8 @@ Information (4)
 Sources d'événements :   
 DNS-Server-Service  
 DNS Client Events  
+Événements critiques (ID principaux)
+2,4,409,501,502,6001,6002
 
 Cliquer sur "Exporter la vue personnalisée..."  
 Enregistrer le fichier en format XML.  
