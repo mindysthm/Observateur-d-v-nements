@@ -1,0 +1,47 @@
+<ViewerConfig>
+<QueryConfig>
+<QueryParams>
+<Simple>
+<Channel>DNS Server,Microsoft-Windows-Narrator/Diagnostic</Channel>
+<BySource>True</BySource>
+<Source>Microsoft-Windows-DNSServer,Microsoft-Windows-DNS-Server-Service,Microsoft-Windows-Narrator,sbp2port</Source>
+<RelativeTimeInfo>0</RelativeTimeInfo>
+<EventId>2,4,409,501,502,6001,6002</EventId>
+<Level>1,2,3,4,0</Level>
+</Simple>
+</QueryParams>
+<QueryNode>
+<Name>Vue DNS personnalisée</Name>
+<QueryList>
+<Query Id="0" Path="DNS Server">
+<Select Path="DNS Server">*[System[Provider[@Name='Microsoft-Windows-DNSServer' or @Name='Microsoft-Windows-DNS-Server-Service' or @Name='Microsoft-Windows-Narrator' or @Name='sbp2port'] and (Level=1 or Level=2 or Level=3 or Level=4 or Level=0) and (EventID=2 or EventID=4 or EventID=409 or EventID=501 or EventID=502 or EventID=6001 or EventID=6002)]]</Select>
+<Select Path="Microsoft-Windows-Narrator/Diagnostic">*[System[Provider[@Name='Microsoft-Windows-DNSServer' or @Name='Microsoft-Windows-DNS-Server-Service' or @Name='Microsoft-Windows-Narrator' or @Name='sbp2port'] and (Level=1 or Level=2 or Level=3 or Level=4 or Level=0) and (EventID=2 or EventID=4 or EventID=409 or EventID=501 or EventID=502 or EventID=6001 or EventID=6002)]]</Select>
+</Query>
+</QueryList>
+</QueryNode>
+</QueryConfig>
+<ResultsConfig>
+<Columns>
+<Column Name="Niveau" Type="System.String" Path="Event/System/Level" Visible="">50</Column>
+<Column Name="Mots clés" Type="System.String" Path="Event/System/Keywords">70</Column>
+<Column Name="Date et heure" Type="System.DateTime" Path="Event/System/TimeCreated/@SystemTime" Visible="">60</Column>
+<Column Name="Source" Type="System.String" Path="Event/System/Provider/@Name" Visible="">90</Column>
+<Column Name="ID de l’événement" Type="System.UInt32" Path="Event/System/EventID" Visible="">50</Column>
+<Column Name="Catégorie de la tâche" Type="System.String" Path="Event/System/Task" Visible="">100</Column>
+<Column Name="Utilisateur" Type="System.String" Path="Event/System/Security/@UserID">50</Column>
+<Column Name="Code opérationnel" Type="System.String" Path="Event/System/Opcode">110</Column>
+<Column Name="Journal" Type="System.String" Path="Event/System/Channel">80</Column>
+<Column Name="Ordinateur" Type="System.String" Path="Event/System/Computer">170</Column>
+<Column Name="ID de processus" Type="System.UInt32" Path="Event/System/Execution/@ProcessID">70</Column>
+<Column Name="ID de thread" Type="System.UInt32" Path="Event/System/Execution/@ThreadID">70</Column>
+<Column Name="ID du processeur" Type="System.UInt32" Path="Event/System/Execution/@ProcessorID">90</Column>
+<Column Name="Identificateur de session" Type="System.UInt32" Path="Event/System/Execution/@SessionID">70</Column>
+<Column Name="Durée noyau" Type="System.UInt32" Path="Event/System/Execution/@KernelTime">80</Column>
+<Column Name="Durée utilisateur" Type="System.UInt32" Path="Event/System/Execution/@UserTime">70</Column>
+<Column Name="Temps processeur" Type="System.UInt32" Path="Event/System/Execution/@ProcessorTime">100</Column>
+<Column Name="Identificateur de corrélation" Type="System.Guid" Path="Event/System/Correlation/@ActivityID">85</Column>
+<Column Name="ID de corrélation relatif" Type="System.Guid" Path="Event/System/Correlation/@RelatedActivityID">140</Column>
+<Column Name="Nom source de l’événement" Type="System.String" Path="Event/System/Provider/@EventSourceName">140</Column>
+</Columns>
+</ResultsConfig>
+</ViewerConfig>
